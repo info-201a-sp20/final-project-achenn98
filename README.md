@@ -11,9 +11,11 @@ As a group, we believe that women should have reproductive rights. We think this
 1. https://lozierinstitute.org/health-clinics-nationwide-compared-to-planned-parenthood-centers/
 
 This project focuses on federally-funded health clinics that serve low-income, minority populations in the United States in comparison to the number of Planned Parenthood centers. It showcases data by each state, providing the numbers and location of each Planned Parenthood and health clinics.
+
 2. https://www.cdc.gov/mmwr/volumes/68/ss/ss6811a1.htm
 
 This project focuses on the statistics of abortion surveillance, documenting the number and characteristics of women obtaining legal abortions through the United States. It contains many tables, charts, charts, and graphs to display their statistics and text to summarize their findings.
+
 3. https://www.plannedparenthood.org/uploads/filer_public/7a/ac/7aacf0ad-fd1c-4dcc-b65f-47e3c3754e0d/sex_education_-_a_national_survey_on_support_among_likely_voters_logo.pdf
 
 This is a planned parenthood project that showcases a survey they studied showcasing their participants' support of sexual education. They used a sample of 1,001 respondents over the age of 18 with an overwhelming majority supporting and encouraging free sexual education in school with charts and graphs to display their results.
@@ -22,10 +24,12 @@ This is a planned parenthood project that showcases a survey they studied showca
 
 1. Does the political party or religious affiliation affect the reproductive health resources in each state/region?
 
-We can answer this by looking at the different political parties in each state/region and the amount of reproductive health resources available in that state/region and see if there is a correlation between those two data points. We can display this data by creating a graph of each state and displaying the majority political party represented by each party color and then using a location pin to represent the current health clinics. This will showcase the political party and the number of health clinics in each state. 
+We can answer this by looking at the different political parties in each state/region and the amount of reproductive health resources available in that state/region and see if there is a correlation between those two data points. We can display this data by creating a graph of each state and displaying the majority political party represented by each party color and then using a location pin to represent the current health clinics. This will showcase the political party and the number of health clinics in each state.
+
 2. Which states provide the most amount of reproductive resources? The least?
 
-We can answer this by comparing how many resources each state provides and comparing them to one another. We can display this by creating a table by each state and using columns to represent different questions, such as how much total funding does the state provide (private/public), how many health clinic locations, services allowed, etc
+We can answer this by comparing how many resources each state provides and comparing them to one another. We can display this by creating a table by each state and using columns to represent different questions, such as how much total funding does the state provide (private/public), how many health clinic locations, services allowed, etc.
+
 3. How has the amount of resources changed over time? (Make observations on the political climate/economy during these times.)
 
 We can answer this by comparing the amount of resources the country or each state has at multiple points in time. We can answer this question by creating a graph that changes over time to display the opening and closing of locations with bigger location pins over clinics with more resources. This will potentially fluctuate over time.
