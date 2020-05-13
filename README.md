@@ -8,15 +8,15 @@ As a group, we believe that women should have reproductive rights. We think this
 
 **Examples of data-drive projects related to this Domain**
 
-1. https://lozierinstitute.org/health-clinics-nationwide-compared-to-planned-parenthood-centers/
+1. [Health Clinics Nationwide Compared to Planned Parenthood Centers](https://lozierinstitute.org/health-clinics-nationwide-compared-to-planned-parenthood-centers/)
 
 This project focuses on federally-funded health clinics that serve low-income, minority populations in the United States in comparison to the number of Planned Parenthood centers. It showcases data by each state, providing the numbers and location of each Planned Parenthood and health clinics.
 
-2. https://www.cdc.gov/mmwr/volumes/68/ss/ss6811a1.htm
+2. [Abortion Surveillance](https://www.cdc.gov/mmwr/volumes/68/ss/ss6811a1.htm)
 
 This project focuses on the statistics of abortion surveillance, documenting the number and characteristics of women obtaining legal abortions through the United States. It contains many tables, charts, charts, and graphs to display their statistics and text to summarize their findings.
 
-3. https://www.plannedparenthood.org/uploads/filer_public/7a/ac/7aacf0ad-fd1c-4dcc-b65f-47e3c3754e0d/sex_education_-_a_national_survey_on_support_among_likely_voters_logo.pdf
+3. [A National Survey on Support Among Likely Voters](https://www.plannedparenthood.org/uploads/filer_public/7a/ac/7aacf0ad-fd1c-4dcc-b65f-47e3c3754e0d/sex_education_-_a_national_survey_on_support_among_likely_voters_logo.pdf)
 
 This is a planned parenthood project that showcases a survey they studied showcasing their participants' support of sexual education. They used a sample of 1,001 respondents over the age of 18 with an overwhelming majority supporting and encouraging free sexual education in school with charts and graphs to display their results.
 
@@ -36,9 +36,7 @@ We can answer this by comparing the amount of resources the country or each stat
 
 ## Finding Data
 
-**Dataset #1: State Political Parties**
-
-Webpage: https://www.kff.org/other/state-indicator/state-political-parties/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D
+**Dataset #1: [State Political Parties](https://www.kff.org/other/state-indicator/state-political-parties/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D)**
 
 The dataset contains information about governor, state senate majority, state house majority, state attorney general, and state insurance commissioner political affiliations of each state in the United States.
 
@@ -47,13 +45,8 @@ Data was collected from multiple sources: National Governors Association (NGA), 
 There are 50 rows and 6 columns including the states in the first row. Note that there are descriptions at the top and bottom of the .csv file.
 This dataset can partially answer the question of how the political party affects reproductive health resources. Another dataset on reproductive health resources would need to be combined to fully answer the question.
 
-**Dataset #2: Number of Abortion/Family Planning Clinics and Contraception Use**
+**Dataset #2: [Number of Abortion/Family Planning Clinics and Contraception Use](https://data.guttmacher.org/states/table?dataset=data&state=AL+AK+AZ+AR+CA+CO+CT+DE+DC+FL+GA+HI+ID+IL+IN+IA+KS+KY+LA+ME+MD+MA+MI+MN+MS+MO+MT+NE+NV+NH+NJ+NM+NY+NC+ND+OH+OK+OR+PA+RI+SC+SD+TN+TX+UT+VT+VA+WA+WV+WI+WY&topics=57+283+105+256)**
 
-Webpage:
-https://data.guttmacher.org/states/table?dataset=data&state=AL+AK+AZ+AR+CA+CO+CT+DE+DC+FL+GA+HI+ID+IL+IN+IA+KS+KY+LA+ME+MD+MA+MI+MN+MS+MO+MT+NE+NV+NH+NJ+NM+NY+NC+ND+OH+OK+OR+PA+RI+SC+SD+TN+TX+UT+VT+VA+WA+WV+WI+WY&topics=57+283+105+256
-
-CSV:
-http://api.guttmacher.org/measure/data/258+259+262+503+130+211?type=csv&state=AL%20AK%20AZ%20AR%20CA%20CO%20CT%20DE%20DC%20FL%20GA%20HI%20ID%20IL%20IN%20IA%20KS%20KY%20LA%20ME%20MD%20MA%20MI%20MN%20MS%20MO%20MT%20NE%20NV%20NH%20NJ%20NM%20NY%20NC%20ND%20OH%20OK%20OR%20PA%20RI%20SC%20SD%20TN%20TX%20UT%20VT%20VA%20WA%20WV%20WI%20WY&visualization=datatable&dataset=data
 
 The data is about women’s reproductive health on the state level, more specifically the number of abortion clinics and family planning clinics and the percentage of need met by said clinics. It also covers the percentage of women aged 18-49 who use contraceptives by state.
 
@@ -61,10 +54,8 @@ Data was collected from the Guttmacher Institute. Collected in multiple ways, th
 
 There are 51 rows and 6 columns. This data set will start to answer what state provides the most amount of reproductive resources.
 
-**Dataset #3  Anti-Reproductive Rights Crimes**
-
-Webpage: https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2019-06/ARRC_2004-2018.csv
-https://openjustice.doj.ca.gov/data
+**Dataset #3: [Anti-Reproductive Rights Crimes](https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2019-06/ARRC_2004-2018.csv
+https://openjustice.doj.ca.gov/data)**
 
 The data was collected by the Department of Justice (DOJ) and the Criminal Justice Statistics Center (CJSC) which collects information on Anti- Reproductive rights crimes. The data is collected from various Law Enforcement Entities (LEA) each month state-wide.
 
