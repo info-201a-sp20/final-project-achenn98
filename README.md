@@ -54,8 +54,7 @@ Data was collected from the Guttmacher Institute. Collected in multiple ways, th
 
 There are 51 rows and 6 columns. This data set will start to answer what state provides the most amount of reproductive resources.
 
-**Dataset #3: [Anti-Reproductive Rights Crimes](https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2019-06/ARRC_2004-2018.csv
-https://openjustice.doj.ca.gov/data)**
+**Dataset #3: [Anti-Reproductive Rights Crimes](https://openjustice.doj.ca.gov/data)**
 
 The data was collected by the Department of Justice (DOJ) and the Criminal Justice Statistics Center (CJSC) which collects information on Anti- Reproductive rights crimes. The data is collected from various Law Enforcement Entities (LEA) each month state-wide.
 
