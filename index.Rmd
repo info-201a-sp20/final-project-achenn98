@@ -11,9 +11,17 @@ source("scripts/chart_one.R")
 ```
 
 ## Chart 1: Bar Graph
-A bar graph is chosen to display the number of abortion clinics in the four regions of the United States. This is the graph of choice because it’s able to show the varying differences in the number of abortion clinics. It’s also ideal because the numerical data points aren’t closely related. As shown below, the West region has the most abortion clinics - more than 250, with the midwest region having the least - less than 100. 
+A bar graph is chosen to display the number of abortion clinics in the four
+regions of the United States. This is the graph of choice because it’s able to
+show the varying differences in the number of abortion clinics. It’s also ideal
+because the numerical data points aren’t closely related. As shown below, the
+West region has the most abortion clinics - more than 250, with the midwest
+region having the least - less than 100. 
 
-Often times, abortion clinics are closely correlated to political views. With the west region consisting of mostly left-winged individuals who are pro-choice, it makes sense that there are more abortion clinics in the west compared to the midwest where more right-winged pro-life individuals reside.
+Often times, abortion clinics are closely correlated to political views. With
+the west region consisting of mostly left-winged individuals who are
+pro-choice, it makes sense that there are more abortion clinics in the west
+compared to the midwest where more right-winged pro-life individuals reside.
 
 ``` {r, echo = F}
 abortion_clinics_per_region(region_grouped)

@@ -1,7 +1,8 @@
 #set-up
 library("dplyr")
 library("ggplot2")
-abortion_data <- read.csv("data/guttmacher_abortion_data.csv", stringsAsFactors = F)
+abortion_data <- read.csv("data/guttmacher_abortion_data.csv",
+                          stringsAsFactors = F)
 states_regions <- read.csv("data/states_regions.csv", stringsAsFactors = F)
 
 #bar graph shows the number of abortion clinics per region
@@ -11,7 +12,8 @@ joined_df <- full_join(abortion_data, states_regions)
 
 #grouping based on region
 region_grouped <- joined_df %>%
-  mutate(new_num_abortion_clinics = as.numeric(joined_df$Num_of_abortion_clinics_2017)) %>%
+  mutate(new_num_abortion_clinics =
+           as.numeric(joined_df$Num_of_abortion_clinics_2017)) %>%
   group_by(Region) %>%
   summarise(total_abortion_clinics = sum(new_num_abortion_clinics, na.rm = T))
 
