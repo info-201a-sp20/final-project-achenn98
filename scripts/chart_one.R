@@ -24,3 +24,4 @@ abortion_clinics_per_region <- function(df) {
          y = "Total Abortion Clinics")
   return(graph)
 }
+
