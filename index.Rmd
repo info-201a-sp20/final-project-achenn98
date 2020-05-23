@@ -28,7 +28,11 @@ You can find the source of this dataset on the
 
 
 ## Summary Info Paragraph 
-The dataset we used for this assignment was from the Guttmacher Institute, focusing on women’s reproductive health in each of the states in the USA. The data mainly highlights the number of abortion clinics and family planning clinics available per state as well as the information  on the contraceptive usage for women aged 18-49.
+The dataset we used for this assignment was from the Guttmacher Institute, 
+focusing on women’s reproductive health in each of the states in the USA. 
+The data mainly highlights the number of abortion clinics and family planning
+clinics available per state as well as the information  on the contraceptive 
+usage for women aged 18-49.
 
 ## Summary Table 
 ```{r, echo=FALSE}
