@@ -9,10 +9,8 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 source("scripts/chart_one.R")
 source("scripts/chart_two.R")
-library("dplyr")
+source("scripts/Char_Three.R")
 library("knitr")
-library("ggplot2")
-library("leaflet")
 ```
 ### Midpoint Deliverable- Abortion Statistics by Region
 As a group, we believe that women should have reproductive rights. We think this
@@ -36,7 +34,13 @@ usage for women aged 18-49.
 
 ## Summary Table 
 ```{r, echo=FALSE}
-kable(joined_df, col.names = c("State", "% Change in abortion rate", "% Change in the no. of abortion clinics","Abortion Rate", "Number of women using contraceptives", "Change in the no. of abortion clinics", "No. of abortion clinics", "State Code", "Region", "Division"))
+kable(joined_df, col.names = c("State", "% Change in abortion rate",
+                               "% Change in the no. of abortion clinics",
+                               "Abortion Rate",
+                               "Number of women using contraceptives",
+                               "Change in the no. of abortion clinics",
+                               "No. of abortion clinics", "State Code",
+                               "Region", "Division"))
 ```
 
 ## Chart 1: Bar Graph
