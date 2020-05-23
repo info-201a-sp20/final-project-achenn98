@@ -34,6 +34,14 @@ The data mainly highlights the number of abortion clinics and family planning
 clinics available per state as well as the information  on the contraceptive 
 usage for women aged 18-49.
 
+For our summary table we did several calculations to find
+(during the year of 2017):
+the state with the most number of clinics: 
+the highest number of clinics available in a single state:
+the rate of abortions per state: 
+which state had the highest abortion rate:
+the highest rate per region:   
+
 ## Summary Table 
 ```{r, echo=FALSE}
 kable(joined_df, col.names = c("State", "% Change in abortion rate", "% Change in the no. of abortion clinics","Abortion Rate", "Number of women using contraceptives", "Change in the no. of abortion clinics", "No. of abortion clinics", "State Code", "Region", "Division"))
