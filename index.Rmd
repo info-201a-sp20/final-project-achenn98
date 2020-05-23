@@ -47,8 +47,14 @@ For our summary table we did several calculations to find
 ## Summary Table 
 This table was created to very easily display the numbers of the abortion rates, Contraception Percent, and Number of Abortion Clinics in each region. We used the group_by, sum, and mean functions to compute our results for each region. We found these columns to be the most helpful for our project goal and answering our questions. Our summary table displayed that the west region had the highest contraception rate and number of abortion clinics. The midwest had the lowest abortion rate and number of abortion clinics. 
 ```{r, echo=FALSE}
+<<<<<<< HEAD
 kable(summary_table, col.names = c("Region", "Abortion Rate", "Contraception Percent", "Number of Abortion Clinics"))
 
+=======
+
+kable(summary_table)
+#kable(joined_df, col.names = c("State", "% Change in abortion rate", "% Change in the no. of abortion #clinics","Abortion Rate", "Number of women using contraceptives", "Change in the no. of abortion clinics", "No. #of abortion clinics", "State Code", "Region", "Division"))
+>>>>>>> 5c97f1399de2486421ab0b4edd30eca24ae7bedc
 ```
 
 ## Chart 1: Bar Graph
