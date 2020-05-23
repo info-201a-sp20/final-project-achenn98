@@ -32,3 +32,7 @@ abortion_clinics_per_region(region_grouped)
 A scatterplot was used to display the amount of total abortion clinics versus the total abortion rates based on the region. This is the graph of choice because it allows the viewer to see if there is a correlation between abortion clinics and rate in different regions.
 
 This graph showcases that there is no correlation between the amount of abortion clinics and the amount of abortion rates per region. This means that these two factors are not codependent and influence each other. Even if there are more more abortion clinics this will not mean more people need an abortion. 
+
+```{r, echo=FALSE}
+scatterplot
+```
