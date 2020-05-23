@@ -33,19 +33,26 @@ West region has the most abortion clinics - more than 250, with the midwest
 region having the least - less than 100. 
 
 Often times, abortion clinics are closely correlated to political views. With
-the west region consisting of mostly left-winged individuals who are
+the west region consisting of mostly left-winged, liberalist who are
 pro-choice, it makes sense that there are more abortion clinics in the west
-compared to the midwest where more right-winged pro-life individuals reside.
+compared to the midwest where more right-winged conservatives pro-life
+individuals reside.
 
 ``` {r, echo = F}
 abortion_clinics_per_region(region_grouped)
 ```
 
 ## Chart 2: Scatterplot
-A scatterplot was used to display the amount of total abortion clinics versus the total abortion rates based on the region. This is the graph of choice because it allows the viewer to see if there is a correlation between abortion clinics and rate in different regions.
+A scatterplot was used to display the amount of total abortion clinics versus
+the total abortion rates based on the region. This is the graph of choice
+because it allows the viewer to see if there is a correlation between abortion
+clinics and rate in different regions.
 
-This graph showcases that there is no correlation between the amount of abortion clinics and the amount of abortion rates per region. This means that these two factors are not codependent and influence each other. Even if there are more more abortion clinics this will not mean more people need an abortion. 
+This graph showcases that there is no correlation between the amount of
+abortion clinics and the amount of abortion rates per region. This means that
+these two factors are not codependent and influence each other. Even if there
+are more more abortion clinics this will not mean more people need an abortion. 
 
 ```{r, echo=FALSE}
-scatterplot
+scatterplot(abortion_rate_and_clinics)
 ```

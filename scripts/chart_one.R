@@ -9,13 +9,16 @@ states_regions <- read.csv("data/states_regions.csv", stringsAsFactors = F)
 
 #binding states dataframe with regions dataframe
 joined_df <- full_join(abortion_data, states_regions)
-joined_df<-  joined_df[-c(52, 53, 54),]
+joined_df <-  joined_df[-c(52, 53, 54), ]
+
 #grouping based on region
 region_grouped <- joined_df %>%
   mutate(new_num_abortion_clinics =
            as.numeric(joined_df$Num_of_abortion_clinics_2017)) %>%
   group_by(Region) %>%
-  summarise(total_abortion_clinics = sum(new_num_abortion_clinics, na.rm = T))
+  summarise(total_abortion_clinics =
+              sum(new_num_abortion_clinics, na.rm = T)) %>%
+  filter(Region != "NA")
 
 #bar graph
 abortion_clinics_per_region <- function(df) {
@@ -26,4 +29,3 @@ abortion_clinics_per_region <- function(df) {
          y = "Total Abortion Clinics")
   return(graph)
 }
-
