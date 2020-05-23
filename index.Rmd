@@ -9,7 +9,10 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 source("scripts/chart_one.R")
 source("scripts/chart_two.R")
+source("scripts/summary_info.R")
 ```
+
+## Summary Info Paragraph 
 
 ## Chart 1: Bar Graph
 A bar graph is chosen to display the number of abortion clinics in the four

@@ -5,6 +5,7 @@ states_regions <- read.csv("data/states_regions.csv", stringsAsFactors = F)
 
 #binding states dataframe with regions dataframe
 joined_df <- full_join(abortion_data, states_regions)
+joined_df<-  joined_df[-c(52, 53, 54),]
 
 #grouping abortion rate and number of clinics based on region
 Abortion_rate_and_clinics <- joined_df %>%
