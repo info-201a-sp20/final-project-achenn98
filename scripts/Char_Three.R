@@ -39,8 +39,7 @@ Number_Clinics <- Resources_Region_csv %>%
 
 #Making the % of contraceptives column numbers
 
-Percentage_Contraceptives <- as.numeric
-(Resources_Region_csv$X..of.women.aged.18.49.using.contraceptives..2017..1.)
+Percentage_Contraceptives <- as.numeric(Resources_Region_csv$X..of.women.aged.18.49.using.contraceptives..2017..1.)
 Resources_Region_csv$Percentage_Contraceptives <- Percentage_Contraceptives
 
 #Grouping

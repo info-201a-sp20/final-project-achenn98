@@ -50,9 +50,17 @@ clinics and rate in different regions.
 
 This graph showcases that there is no correlation between the amount of
 abortion clinics and the amount of abortion rates per region. This means that
-these two factors are not codependent and influence each other. Even if there
-are more more abortion clinics this will not mean more people need an abortion. 
+these two factors are not codependent and do not influence each other. Even if there are more more abortion clinics this will not mean more people need an abortion. 
 
 ```{r, echo=FALSE}
 scatterplot(abortion_rate_and_clinics)
+```
+
+## Char 3: Scatterplot 
+This scatterplt was used to display the percentage of women aged 18 to 49 who used contraceptives in 2017 versus the number of Abortion Clinics in a region. We chose to do a scatterplot because it allows the viewer to easily see if there is a correlation between the number of abortion cinlics and the percentage of women using contraceptives. It also allows the viewer to easily see which region that data is from.
+
+This graph shoes that there probably is not any correlation between the number of abortion clinics and the percentage of women taking contraceptives. This means that the amount of abortion clinics near woemn does not seem to have any effect on if the women will take contraceptives.
+
+```{r, echo = FALSE}
+Percentage_Contraceptives_VS_Num_Clinics(Region_Contraceptives_Clinics)
 ```
