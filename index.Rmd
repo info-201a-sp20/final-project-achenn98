@@ -7,10 +7,16 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library("dplyr")
+library("knitr")
+library("ggplot2")
+library("leaflet")
 source("scripts/chart_one.R")
 source("scripts/chart_two.R")
-source("scripts/Char_Three.R")
-library("knitr")
+source("scripts/chart_three.R")
+source("scripts/summary_info_2.R")
+source("scripts/aggregate_table.R")
+
 ```
 ### Midpoint Deliverable- Abortion Statistics by Region
 As a group, we believe that women should have reproductive rights. We think this
@@ -32,15 +38,17 @@ The data mainly highlights the number of abortion clinics and family planning
 clinics available per state as well as the information  on the contraceptive 
 usage for women aged 18-49.
 
+For our summary table we did several calculations to find
+(during the year of 2017):
+
+ The region with the least number of clinics was the `r min_region_clinics` with a total of 
+`r min_num_region_clinics` clinics in that region. The region with the most number of clinics was the `r max_region_clinics` with a total of `r max_num_region_clinics` clinics in that region. The region with the lowest percent of women using contraceptive was `r percentage_min` percent. The region with the highest percent of women using contraceptive was `r percentage_max` percent.
+
 ## Summary Table 
 ```{r, echo=FALSE}
-kable(joined_df, col.names = c("State", "% Change in abortion rate",
-                               "% Change in the no. of abortion clinics",
-                               "Abortion Rate",
-                               "Number of women using contraceptives",
-                               "Change in the no. of abortion clinics",
-                               "No. of abortion clinics", "State Code",
-                               "Region", "Division"))
+
+kable(summary_table)
+#kable(joined_df, col.names = c("State", "% Change in abortion rate", "% Change in the no. of abortion #clinics","Abortion Rate", "Number of women using contraceptives", "Change in the no. of abortion clinics", "No. #of abortion clinics", "State Code", "Region", "Division"))
 ```
 
 ## Chart 1: Bar Graph
@@ -91,5 +99,6 @@ that the amount of abortion clinics near woemn does not seem to have any effect
 on if the women will take contraceptives.
 
 ```{r, echo = FALSE}
-Percentage_Contraceptives_VS_Num_Clinics(Region_Contraceptives_Clinics)
+chart_3(percent_and_clinics)
 ```
+
