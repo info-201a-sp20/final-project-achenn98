@@ -1,6 +1,7 @@
 # Final Project
 Use this `REAMDE.md` file to describe your final project (as detailed on Canvas).
 
+
 ## Domain of Interest: Reproductive Health
 **Why are you interested in this field/domain?**
 
@@ -59,3 +60,7 @@ There are 51 rows and 6 columns. This data set will start to answer what state p
 The data was collected by the Department of Justice (DOJ) and the Criminal Justice Statistics Center (CJSC) which collects information on Anti- Reproductive rights crimes. The data is collected from various Law Enforcement Entities (LEA) each month state-wide.
 
 There are a total of 21 columns and 106 rows/entries. The dataset will help us to answer if there is less support amongst states with higher conservative and religious backgrounds. This can be seen through certain states who are more against reproductive rights and in turn, more crimes occur in those locations. This data set will help us to view data on the crimes that are committed against reproductive health services providers, clients, assistants or the facilities. It goes into depth on where these services are provided if religion is involved, location of the crime, type of victim, race/ethnicity, gender of victims and suspects, weapon involved, and property loss or damage.
+
+
+**Midpoint Deliverable website:**
+https://info-201a-sp20.github.io/final-project-achenn98/ 

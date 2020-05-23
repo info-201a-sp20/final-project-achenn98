@@ -8,23 +8,24 @@ colnames(joined_df)
 joined_df <- full_join(abortion_data, states_regions)
 joined_df <- joined_df[-c(52, 53, 54), ]
 
+#grouping percent contraception and number of clinics based on region
 percent_and_clinics <- joined_df %>%
   mutate(new_num_abortion_clinics =
            as.numeric(joined_df$Num_of_abortion_clinics_2017),
-         percent_contraceptive=
+           percent_contraceptive=
            as.numeric(joined_df$X..of.women.aged.18.49.using.contraceptives..2017..1.)) %>%
   group_by(Region) %>%
   summarize(total_abortion_clinics = sum(new_num_abortion_clinics, na.rm = T),
             percent_contraceptive =
               mean(percent_contraceptive, na.rm = T))
 
-chart_3 <- function(df) {
+chart_3 <- function(df) { #plots the chart and titles, x and y axis label
   plot <- ggplot(data = df) +
     geom_point(mapping = aes(x = total_abortion_clinics, y = percent_contraceptive,
                              color = Region)) +
-    labs(title = "Total Abortion Rates x Percent Contraceptive by Region",
+    labs(title = "Total Abortion Clinics x Percent Contraceptive by Region",
          x = "Total Abortion Clinics",
-         y = "Total Contraceptive")
+         y = "Percent Contraceptive")
   return(plot)
 }
 chart_3(percent_and_clinics)
