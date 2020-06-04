@@ -34,7 +34,15 @@ interactive_three <- tabPanel(
     sidebarPanel(h1("Change the y Axis"),
     tags$p(
       id = "graph_three_paragraph",
-      "My explination of graph 3 will go here."
+      "       This bubble chart attempts to show the relationship, if any, between
+      the number of abortion clinics in a region and the percentage of women
+      aged 18 to 49 that use contraceptives. If there is a relationship then
+      one could argue that abortion clincs being around might sway the number
+      of women on contraceptives. As you can see this chart shows little to no
+      correlation between the number of abortion clincs and the percentage of
+      women on contraceptives. This implies that it doesn't matter if you have
+      an easy option or not to abort, because either way most women are going to
+      be on contraceptives."
     ),
     sliderInput("Slider", "Pick a Max y Value", min = 75, max = 100, value = 5),
     sliderInput("Slider", "Pick a Min y Value", min = 20, max = 60, value = 5)),
