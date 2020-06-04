@@ -1,4 +1,4 @@
-library(shiny)
+library("shiny")
 
 
 intro <- tabPanel(
@@ -29,12 +29,14 @@ interactive_two <- tabPanel(
 )
 interactive_three <- tabPanel(
   "Abortion Clinics x Percent Contraceptive",
-  fluidPage(h1("Total Abortion Clinics x Percent Contraceptive by Region"), plotOutput("clin_con")),
+  fluidPage(h1("Total Abortion Clinics x Percent Contraceptive by Region")),
   sidebarLayout(
     sidebarPanel(h4("Zoom in or out on the Percent of Contraceptives Axis"),
     sliderInput("Slider", "Pick a Max y Value", min = 75, max = 100, value = 5),
     sliderInput("Slider", "Pick a Min y Value", min = 20, max = 60, value = 5)),
-    mainPanel(tags$p(
+    mainPanel(
+      plotOutput("clin_con"),
+      tags$p(
       id = "graph_three_paragraph",
       "This bubble chart attempts to show the relationship, if any, between
       the number of abortion clinics in a region and the percentage of women

@@ -5,11 +5,11 @@ library("plotly")
 abortion_data <- read.csv("guttmacher_abortion_data.csv",
                           stringsAsFactors = F)
 states_regions <- read.csv("states_regions.csv", stringsAsFactors = F)
-colnames(joined_df)
+
 #binding states dataframe with regions dataframe
 joined_df <- full_join(abortion_data, states_regions)
 joined_df <- joined_df[-c(52, 53, 54), ]
-
+colnames(joined_df)
 #grouping percent contraception and number of clinics based on region
 percent_and_clinics <- joined_df %>%
   mutate(new_num_abortion_clinics =
@@ -31,7 +31,7 @@ chart_3 <- function(df) { #plots the chart and titles, x and y axis label
          y = "Percent Contraceptive") +
     scale_size(range = c(6, 10), name = "Total Abortion Clinics") +
     coord_cartesian(ylim = c(60, 80))
-  ggplotly(plot) 
+  plot <- ggplotly(plot) 
   return(plot)
 }
 chart_3(percent_and_clinics)
