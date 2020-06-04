@@ -20,10 +20,10 @@ interactive_one <- tabPanel(
 )
 
 interactive_two <- tabPanel(
-  "Page Three",
-  fluidPage(),
+  "Abortion Clinics x Abortion Rates",
+  fluidPage(h1("Total Abortion Clinics x Abortion Rates ")),
   sidebarLayout(
-    sidebarPanel(h1("Heading")),
+    sidebarPanel(h4("Zoom in or out on the Percent of abortion rate Axis"),
     mainPanel()
   )
 )
@@ -72,3 +72,4 @@ ui <- shinyUI(navbarPage(
   summary
   
 ))
+
