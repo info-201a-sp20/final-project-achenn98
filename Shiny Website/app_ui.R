@@ -32,6 +32,10 @@ interactive_three <- tabPanel(
   fluidPage("Total Abortion Clinics x Percent Contraceptive by Region", plotOutput("clin_con")),
   sidebarLayout(
     sidebarPanel(h1("Change the y Axis"),
+    tags$p(
+      id = "graph_three_paragraph",
+      "My explination of graph 3 will go here."
+    ),
     sliderInput("Slider", "Pick a Max y Value", min = 75, max = 100, value = 5),
     sliderInput("Slider", "Pick a Min y Value", min = 20, max = 60, value = 5)),
     mainPanel()
