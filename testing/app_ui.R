@@ -3,22 +3,24 @@ library("ggplot2")
 
 #side bar content
 bar_sidebar_content <- sidebarPanel(
- checkboxGroupInput(
+ selectInput(
    inputId = "chart_regions",
-   label = "Pick two geographic regions:",
-   choices = list(
-     "Midwest" = "Midwest",
-     "Northwest" = "Northwest",
-     "South" = "South",
-     "West" = "West"                       #does this reference to the df?
+   label = "Pick a geographic region:",
+   choices = region_grouped$Region                  
    )
- )
 )
 
 #main panel content
 bar_main_content <- mainPanel(
+  p("The bar graph shows the number of abortion clinics in each region.",
+    "This is helpful to check or verify this resource in the selected region."),
   plotOutput(
-    outputId = "bar_graph")
+    outputId = "bar_graph",
+    hover = region_grouped$total_abortion_clinics
+    ),
+  verbatimTextOutput(
+    outputId = "info"
+  )
 )
 
 #tabpanel for page with chart one
@@ -26,7 +28,6 @@ bar_panel <- tabPanel(
   title = "# Abortion Clinics/Region",
   titlePanel("Number of Abortion Clinics Per Region"),
   sidebarLayout(
-    p("The bar graph compares different region's number of abortion clinics"),
     bar_sidebar_content,
     bar_main_content
   )
