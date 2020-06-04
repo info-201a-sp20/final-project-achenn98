@@ -32,10 +32,10 @@ interactive_three <- tabPanel(
   fluidPage(h1("Total Abortion Clinics x Percent Contraceptive by Region")),
   sidebarLayout(
     sidebarPanel(h4("Zoom in or out on the Percent of Contraceptives Axis"),
-    sliderInput("Slider", "Pick a Max y Value", min = 75, max = 100, value = 5),
-    sliderInput("Slider", "Pick a Min y Value", min = 20, max = 60, value = 5)),
+    sliderInput(inputId = "Max", "Pick a Max y Value", min = 75, max = 115, value = 80),
+    sliderInput(inputId = "Min", "Pick a Min y Value", min = 20, max = 60, value = 60)),
     mainPanel(
-      plotOutput("clin_con"),
+      plotlyOutput("clin_con"),
       tags$p(
       id = "graph_three_paragraph",
       "This bubble chart attempts to show the relationship, if any, between
