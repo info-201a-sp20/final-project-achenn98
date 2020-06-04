@@ -28,7 +28,7 @@ interactive_two <- tabPanel(
   )
 )
 interactive_three <- tabPanel(
-  "Abortion Clinics x Percent Contraceptive",
+  "Abortion Clinics x Contraceptives",
   fluidPage(h1("Total Abortion Clinics x Percent Contraceptive by Region")),
   sidebarLayout(
     sidebarPanel(h4("Zoom in or out on the Percent of Contraceptives Axis"),
