@@ -21,18 +21,19 @@ percent_and_clinics <- joined_df %>%
             percent_contraceptive =
               mean(percent_contraceptive, na.rm = T))
 
-chart_3 <- function(df) { #plots the chart and titles, x and y axis label
+chart_3 <- function(df, max, min) { #plots the chart and titles, x and y axis label
   plot <- ggplot(data = df) +
     geom_point(mapping = aes(x = Region,
                              y = percent_contraceptive,
                              size = total_abortion_clinics, color = Region)) +
-    labs(title = "Total Abortion Clinics x Percent Contraceptive by Region",
+    labs(title = "Total Abortion Clinics x 
+Percent Contraceptive by Region",
          x = "Region",
          y = "Percent Contraceptive") +
-    scale_size(range = c(6, 10), name = "Total Abortion Clinics") +
-    coord_cartesian(ylim = c(60, 80))
-  plot <- ggplotly(plot) 
+    scale_size(range = c(6, 10), name = "") +
+    coord_cartesian(ylim = c(min, max))
+ 
   return(plot)
 }
-chart_3(percent_and_clinics)
+chart_3(percent_and_clinics, 80, 60)
 
