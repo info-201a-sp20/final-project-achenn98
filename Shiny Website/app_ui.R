@@ -51,6 +51,7 @@ summary <- tabPanel(
 
 ui <- shinyUI(navbarPage(
   titlePanel("Womens Reproductive Resources"),
+  includeCSS("style.css"),
   intro,
   interactive_one,
   interactive_two,
