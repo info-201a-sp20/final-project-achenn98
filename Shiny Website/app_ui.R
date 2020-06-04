@@ -28,13 +28,16 @@ interactive_two <- tabPanel(
   )
 )
 interactive_three <- tabPanel(
-  "Page Four",
-  fluidPage(),
+  "Abortion Clinics x Percent Contraceptive",
+  fluidPage("Total Abortion Clinics x Percent Contraceptive by Region", plotOutput("clin_con")),
   sidebarLayout(
-    sidebarPanel(h1("Heading")),
+    sidebarPanel(h1("Change the y Axis"),
+    sliderInput("Slider", "Pick a Max y Value", min = 75, max = 100, value = 5),
+    sliderInput("Slider", "Pick a Min y Value", min = 20, max = 60, value = 5)),
     mainPanel()
   )
 )
+
 
 summary <- tabPanel(
   "Page Five",
