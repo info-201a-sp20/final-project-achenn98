@@ -7,12 +7,16 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-source("scripts/chart_one.R")
-source("scripts/chart_two.R")
 library("dplyr")
 library("knitr")
 library("ggplot2")
 library("leaflet")
+source("scripts/chart_one.R")
+source("scripts/chart_two.R")
+source("scripts/chart_three.R")
+source("scripts/summary_info_2.R")
+source("scripts/aggregate_table.R")
+
 ```
 ### Midpoint Deliverable- Abortion Statistics by Region
 As a group, we believe that women should have reproductive rights. We think this
@@ -24,13 +28,26 @@ abortion rate, change in number of clinics, % change in number of clinics,
 number of abortion clinics, % of women using contraceptives. Our project is to
 look specifically at the data of each region and state surrounding these topics.
 You can find the source of this dataset on the
-[Guttmacher Institue](https://data.guttmacher.org/states/table?dataset=data&state=AL+AK+AZ+AR+CA+CO+CT+DE+DC+FL+GA+HI+ID+IL+IN+IA+KS+KY+LA+ME+MD+MA+MI+MN+MS+MO+MT+NE+NV+NH+NJ+NM+NY+NC+ND+OH+OK+OR+PA+RI+SC+SD+TN+TX+UT+VT+VA+WA+WV+WI+WY&topics=57+283+65) 
+[Guttmacher Institue](https://data.guttmacher.org/states/table?dataset=data&state=AL+AK+AZ+AR+CA+CO+CT+DE+DC+FL+GA+HI+ID+IL+IN+IA+KS+KY+LA+ME+MD+MA+MI+MN+MS+MO+MT+NE+NV+NH+NJ+NM+NY+NC+ND+OH+OK+OR+PA+RI+SC+SD+TN+TX+UT+VT+VA+WA+WV+WI+WY&topics=57+283+65) and [Kaggle](https://www.kaggle.com/omer2040/usa-states-to-region). We joined these datasets to create our new dataset. 
+
 
 ## Summary Info Paragraph 
+The dataset we used for this assignment was from the Guttmacher Institute, 
+focusing on women’s reproductive health in each of the states in the USA. 
+The data mainly highlights the number of abortion clinics and family planning
+clinics available per state as well as the information  on the contraceptive 
+usage for women aged 18-49.
+
+For our summary table we did several calculations to find
+(during the year of 2017):
+
+ The region with the least number of clinics was the `r min_region_clinics` with a total of 
+`r min_num_region_clinics` clinics in that region. The region with the most number of clinics was the `r max_region_clinics` with a total of `r max_num_region_clinics` clinics in that region. The region with the lowest percent of women using contraceptive was `r percentage_min` percent. The region with the highest percent of women using contraceptive was `r percentage_max` percent.
 
 ## Summary Table 
+This table was created to very easily display the numbers of the abortion rates, Contraception Percent, and Number of Abortion Clinics in each region. We used the group_by, sum, and mean functions to compute our results for each region. We found these columns to be the most helpful for our project goal and answering our questions. Our summary table displayed that the west region had the highest contraception rate and number of abortion clinics. The midwest had the lowest abortion rate and number of abortion clinics. 
 ```{r, echo=FALSE}
-kable(joined_df, col.names = c("State", "% Change in abortion rate", "% Change in the no. of abortion clinics","Abortion Rate", "Number of women using contraceptives", "Change in the no. of abortion clinics", "No. of abortion clinics", "State Code", "Region", "Division"))
+kable(summary_table, col.names = c("Region", "Abortion Rate", "Contraception Percent", "Number of Abortion Clinics"))
 ```
 
 ## Chart 1: Bar Graph
@@ -68,7 +85,7 @@ scatterplot(abortion_rate_and_clinics)
 ```
 
 ## Char 3: Scatterplot 
-This scatterplt was used to display the percentage of women aged 18 to 49 who
+This scatterplot was used to display the percentage of women aged 18 to 49 who
 used contraceptives in 2017 versus the number of Abortion Clinics in a region.
 We chose to do a scatterplot because it allows the viewer to easily see if there
 is a correlation between the number of abortion cinlics and the percentage of
@@ -81,5 +98,6 @@ that the amount of abortion clinics near woemn does not seem to have any effect
 on if the women will take contraceptives.
 
 ```{r, echo = FALSE}
-Percentage_Contraceptives_VS_Num_Clinics(Region_Contraceptives_Clinics)
+chart_3(percent_and_clinics)
 ```
+
