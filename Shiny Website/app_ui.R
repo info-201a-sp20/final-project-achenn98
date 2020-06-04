@@ -29,12 +29,14 @@ interactive_two <- tabPanel(
 )
 interactive_three <- tabPanel(
   "Abortion Clinics x Percent Contraceptive",
-  fluidPage("Total Abortion Clinics x Percent Contraceptive by Region", plotOutput("clin_con")),
+  fluidPage(h1("Total Abortion Clinics x Percent Contraceptive by Region"), plotOutput("clin_con")),
   sidebarLayout(
-    sidebarPanel(h1("Change the y Axis"),
-    tags$p(
+    sidebarPanel(h4("Zoom in or out on the Percent of Contraceptives Axis"),
+    sliderInput("Slider", "Pick a Max y Value", min = 75, max = 100, value = 5),
+    sliderInput("Slider", "Pick a Min y Value", min = 20, max = 60, value = 5)),
+    mainPanel(tags$p(
       id = "graph_three_paragraph",
-      "       This bubble chart attempts to show the relationship, if any, between
+      "This bubble chart attempts to show the relationship, if any, between
       the number of abortion clinics in a region and the percentage of women
       aged 18 to 49 that use contraceptives. If there is a relationship then
       one could argue that abortion clincs being around might sway the number
@@ -43,10 +45,7 @@ interactive_three <- tabPanel(
       women on contraceptives. This implies that it doesn't matter if you have
       an easy option or not to abort, because either way most women are going to
       be on contraceptives."
-    ),
-    sliderInput("Slider", "Pick a Max y Value", min = 75, max = 100, value = 5),
-    sliderInput("Slider", "Pick a Min y Value", min = 20, max = 60, value = 5)),
-    mainPanel()
+    ))
   )
 )
 
