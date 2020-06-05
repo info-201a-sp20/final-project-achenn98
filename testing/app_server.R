@@ -1,8 +1,12 @@
 #load necessary libraries
 library("dplyr")
 library("ggplot2")
+<<<<<<< HEAD
 #library("ggiraph")
 library("shiny")
+=======
+#library("ggiraph") #download ggiraph package before running
+>>>>>>> 4ac6e9c9f8583585db8076505bf5f0ebf0f0fdbc
 
 #read in csv files
 abortion_data <- read.csv("guttmacher_abortion_data.csv",
@@ -25,8 +29,12 @@ region_grouped <- joined_df %>%
 #graph 
 bar_function <- function(df, input, y_chosen) {
   graph <- ggplot(data = df) +
+<<<<<<< HEAD
     geom_col(mapping = aes(x = input,
                                        y = y_chosen)) +  
+=======
+    geom_col(mapping = aes(x = input, y = y_chosen)) +  
+>>>>>>> 4ac6e9c9f8583585db8076505bf5f0ebf0f0fdbc
     labs(title = "Number Of Abortion Clinics Per Region",
          x = "Region",
          y = "Total Abortion Clinics")
@@ -40,7 +48,8 @@ server <- function(input, output) {
       region_grouped,
       input$chart_regions,
       region_grouped %>%
-        mutate(adjusted_abortion_clinics = total_abortion_clinics / 4) %>% #when graphed with original data, it's multiplied by 4
+        #when graphed with original data, it's multiplied by 4
+        mutate(adjusted_abortion_clinics = total_abortion_clinics / 4) %>%
         filter(Region == input$chart_regions) %>%
         pull(adjusted_abortion_clinics)
     )
