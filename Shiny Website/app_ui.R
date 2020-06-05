@@ -23,7 +23,6 @@ interactive_two <- tabPanel(
   "Abortion Clinics x Abortion Rates",
   fluidPage(h1("Total Abortion Clinics x Abortion Rates ")),
   sidebarLayout(
-<<<<<<< HEAD
     sidebarPanel(h4("Zoom in or out on the Abortion Rates Axis"),
                  sliderInput(inputId = "Max_y", "Pick a Max y Value", min = 0, max = 300, value = 300),
                  sliderInput(inputId = "Min_y", "Pick a Min y Value", min = 0, max = 300, value = 100)),
@@ -43,10 +42,6 @@ interactive_two <- tabPanel(
          health education and more, which can decrease the need for an unwanted pregnancy 
          and therefore lessens the need for an abortion. "
          ))
-=======
-    sidebarPanel(h4("Zoom in or out on the Percent of abortion rate Axis")),
-    mainPanel()
->>>>>>> 4ac6e9c9f8583585db8076505bf5f0ebf0f0fdbc
   )
 )
 
