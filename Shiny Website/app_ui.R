@@ -103,14 +103,52 @@ summary <-   mainPanel(
               h5("Table"),
               tableOutput("table_1"),
               h5("Explanation"),
+              tags$p(
+                id = "Expanation_1",
+                "When looking at the total number of abortion clinics throughout
+                the four different regions of the United States we found that the
+                West had the most recorded number of clinics - 277 clinics - and
+                the least being the Midwest - 91 clinics. We can see that the West
+                had over three times the number of abortion clinics compared to
+                Midwest. This could imply that there's a lower need for demand in
+                the Midwest than in the other regions, hence the lower number of
+                clinics. Higher population regions such as the West and Northeast
+                may have more clinics to serve more people. Beliefs and feeling
+                towards abortion in specific regions may also be a large
+                contributor to the significant difference in how many clinics that
+                are opened."
+              ),
               h3("Takeaway #2"),
               h5("Table"),
               tableOutput("table_clin_rates"),
               h5("Explanation"),
+              tags$p(
+                id = "Explanation_2",
+                "As we took a look at the total number of abortion clinics to
+                the total abortion rate in each of the four regions we found
+                that there was no clear correlations in the data. While the
+                West had the most number of abortion clinics, it had the 2nd
+                lowest abortion rate. However the South, which had the 2nd least
+                number of clinics, surprisingly had the highest recorded
+                abortion rates. Meanwhile the Midwest had the lowest number
+                of abortion clinics and rates. These insights inform us that the
+                abortion rate can vary region to region regardless of the number
+                of clinics provided."
+              ),
               h3("Takeaway #3"),
               h5("Table"),
               tableOutput("table_clin_con"),
-              h5("Explanation"))
+              h5("Explanation"),
+              tags$p(
+                id = "Explanation_3",
+                "As we pulled and analyzed the information on the total
+                abortion clinics and the percentage of contraceptive usage
+                in each region, we found that data for contraceptive was fairly
+                the same falling within the bracket of 71.86% - 68.68 %. This
+                is very interesting to observe as that tells us the rate of
+                contraceptive usage isn't directly impacted by the total number
+                of clinics provided in the region."
+              ))
   
 
 #UI
