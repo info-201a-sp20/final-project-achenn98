@@ -54,11 +54,19 @@ interactive_three <- tabPanel(
 
 
 summary <- tabPanel(
-  "Page Five",
+  "Summary",
   fluidPage(),
   sidebarLayout(
-    sidebarPanel(h1("Heading")),
-    mainPanel()
+    sidebarPanel(p("Guys I have no idea what to put in this side bar. :/ ")),
+    mainPanel(h4("Takeaway #1"),
+              h5("Table"),
+              h5("Explanation"),
+              h4("Takeaway #2"),
+              h5("Table"),
+              h5("Explanation"),
+              h4("Takeaway #3"),
+              h5("Table"),
+              h5("Explanation"))
   )
 )
   
