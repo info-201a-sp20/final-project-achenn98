@@ -21,6 +21,7 @@ server <- shinyServer(function(input, output) {
   #Renders chart 2 on interactive page 2
   output$clin_rates <- renderPlotly({
     chart2 <- scatterplot(abortion_rate_and_clinics, input$Max_y, input$Min_y)
+    
     plot(chart2)   #displays graph
   })
 
@@ -48,3 +49,4 @@ server <- shinyServer(function(input, output) {
     table_1
   })
 })
+

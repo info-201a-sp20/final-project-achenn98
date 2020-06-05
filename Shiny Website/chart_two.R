@@ -14,6 +14,7 @@ abortion_rate_and_clinics <- joined_df %>%
            as.numeric(joined_df$Num_of_abortion_clinics_2017),
     new_abortion_rate =
       as.numeric(joined_df$Abortion.rate..the.no..of.abortions.per.1.000.women.aged.15.44...by.state.of.occurrence..2017)) %>%
+  
   group_by(Region) %>%
   summarize(total_abortion_clinics = sum(new_num_abortion_clinics, na.rm = T),
            total_abortion_rate =
