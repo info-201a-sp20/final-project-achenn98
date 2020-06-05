@@ -23,7 +23,6 @@ interactive_two <- tabPanel(
   "Abortion Clinics x Abortion Rates",
   fluidPage(h1("Total Abortion Clinics x Abortion Rates ")),
   sidebarLayout(
-<<<<<<< HEAD
     sidebarPanel(h4("Zoom in or out on the Abortion Rates Axis"),
                  sliderInput(inputId = "Max_y", "Pick a Max y Value", min = 0, max = 300, value = 300),
                  sliderInput(inputId = "Min_y", "Pick a Min y Value", min = 0, max = 300, value = 100)),
@@ -43,15 +42,11 @@ interactive_two <- tabPanel(
          health education and more, which can decrease the need for an unwanted pregnancy 
          and therefore lessens the need for an abortion. "
          ))
-=======
-    sidebarPanel(h4("Zoom in or out on the Percent of abortion rate Axis")),
-    mainPanel()
->>>>>>> 4ac6e9c9f8583585db8076505bf5f0ebf0f0fdbc
   )
 )
 
 interactive_three <- tabPanel(
-  "Abortion Clinics x Contraceptives",
+  "Abortion Clinics x Percent Contraceptive",
   fluidPage(h1("Total Abortion Clinics x Percent Contraceptive by Region")),
   sidebarLayout(
     sidebarPanel(h4("Zoom in or out on the Percent of Contraceptives Axis"),
@@ -76,19 +71,11 @@ interactive_three <- tabPanel(
 
 
 summary <- tabPanel(
-  "Summary",
+  "Page Five",
   fluidPage(),
   sidebarLayout(
-    sidebarPanel(p("Guys I have no idea what to put in this side bar. :/ ")),
-    mainPanel(h4("Takeaway #1"),
-              h5("Table"),
-              h5("Explanation"),
-              h4("Takeaway #2"),
-              h5("Table"),
-              h5("Explanation"),
-              h4("Takeaway #3"),
-              h5("Table"),
-              h5("Explanation"))
+    sidebarPanel(h1("Heading")),
+    mainPanel()
   )
 )
 
