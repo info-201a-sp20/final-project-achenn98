@@ -31,7 +31,7 @@ clin_con <- function(df, max, min){
     type = 'scatter',
     mode = "markers",
     text = ~paste("Region: ", Region,
-                '<br>Percent of Contraceptive Use:', percent_contraceptive,
+                '<br>Percent of Contraceptive Use:', round(percent_contraceptive, 3),
                 "<br>Total Abortion Clinics:", total_abortion_clinics),
     color = ~Region, size = ~total_abortion_clinics,
     sizes = c(20, 50),
