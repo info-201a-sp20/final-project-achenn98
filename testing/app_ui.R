@@ -3,11 +3,11 @@ library("ggplot2")
 
 #side bar content
 bar_sidebar_content <- sidebarPanel(
- selectInput(
-   inputId = "chart_regions",
-   label = "Pick a geographic region:",
-   choices = region_grouped$Region                  
-   )
+  selectInput(
+    inputId = "chart_regions",
+    label = "Pick a geographic region:",
+    choices = region_grouped$Region                  
+  )
 )
 
 #main panel content
@@ -17,7 +17,7 @@ bar_main_content <- mainPanel(
   plotOutput(
     outputId = "bar_graph",
     hover = region_grouped$total_abortion_clinics
-    ),
+  ),
   verbatimTextOutput(
     outputId = "info"
   )
@@ -38,3 +38,4 @@ ui <- navbarPage(
   title = "Reproduction Rights",
   bar_panel
 )
+
