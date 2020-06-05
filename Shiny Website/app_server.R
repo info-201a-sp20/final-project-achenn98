@@ -50,9 +50,8 @@ bar_function <- function(df, input) {
                    type = 'bar',
                    text = paste("Number of Abortion Clinics: ",
                                 region_grouped$total_abortion_clinics)) %>%
-    layout(title = "Number Of Abortion Clinics Per Region",
-           xaxis = list("Region"),
-           yaxis = list("Total Abortion Clinics"))
+    layout(xaxis = list(title = "Region"),
+           yaxis = list(title = "Number of Abortion Clinics"))
   return(graph)
 }
 

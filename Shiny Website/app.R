@@ -10,7 +10,6 @@ source("app_ui.R")
 source("app_server.R")
 source("chart_three.R")
 source("chart_two.R")
-source("chart_one.R")
 
 
 

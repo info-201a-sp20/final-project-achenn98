@@ -32,7 +32,14 @@ interactive_one <- sidebarLayout(
       plotlyOutput("bar_graph"),
     tags$p(
       id = "graph_two_paragraph",
-      "paragraph"
+      "This bar graph shows the number of abortion clinics in each region.
+      It attempts to show the general differences while attempting to 
+      highlight specific regions upon user selection on the left. A bar graph
+      is ideal because the numerical data points aren’t closely related. As
+      shown, the West region has the most abortion clinics - more than 250,
+      with the midwest region having the least - less than 100. When hovering
+      with the cursor over each bar, the specific number of abortion clinics
+      is displayed."
     )
   )
 )
@@ -48,16 +55,19 @@ interactive_two <-
        plotlyOutput("clin_rates"),  #ID
        tags$p(
          id = "graph_two_paragraph", #page paragraph definition
-         "This point chart attempts to show the relationship between the total number of 
-         abortion clinics and the total abortion rate in each region. I used a scatterplot
-         to show this correlation, however from the results it demostrates there is a small
-         correlation between the two. However, the results disprove our hypothesis that the more 
-         amount of abortion clinics the more about of abortion rates. The graph displays
-         (with one outlier) that the more abortion clinics the less total abortion rates in that region.
-         This implies that less people need abortions in regions that have more abortion clinics available.
-         This could be due to the fact that abortion clinics also provide other
-         health care resources such as contraceptive, family planning, Plan B,
-         health education and more, which can decrease the need for an unwanted pregnancy 
+         "This point chart attempts to show the relationship between the total
+         number of abortion clinics and the total abortion rate in each region.
+         I used a scatterplot to show this correlation, however from the
+         results it demostrates there is a small correlation between the two.
+         However, the results disprove our hypothesis that the more 
+         amount of abortion clinics the more about of abortion rates. The
+         graph displays (with one outlier) that the more abortion clinics
+         the less total abortion rates in that region. This implies that
+         less people need abortions in regions that have more abortion
+         clinics available. This could be due to the fact that abortion
+         clinics also provide other health care resources such as
+         contraceptive, family planning, Plan B, health education and more,
+         which can decrease the need for an unwanted pregnancy 
          and therefore lessens the need for an abortion. "
          ))
   )
