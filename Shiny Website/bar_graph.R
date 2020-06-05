@@ -20,27 +20,27 @@ region_grouped <- joined_df %>%
               sum(new_num_abortion_clinics, na.rm = T)) %>%
   filter(Region != "NA")
 
-#bar graph 
+#bar graph
 bar_function <- function(df, input) {
   if (input == "Midwest") {
-    input_color = list(color = c('rgba(222,45,38,0.8)', 'rgb(200,200,200)', 
-                                 'rgb(200,200,200)', 'rgb(200,200,200)'))
+    input_color <- list(color = c("rgba(222,45,38,0.8)", "rgb(200,200,200)",
+                                 "rgb(200,200,200)", "rgb(200,200,200)"))
   } else if (input == "Northeast") {
-    input_color = list(color = c('rgb(200,200,200)', 'rgba(222,45,38,0.8)',
-                                 'rgb(200,200,200)', 'rgb(200,200,200)'))
+    input_color <- list(color = c("rgb(200,200,200)", "rgba(222,45,38,0.8)",
+                                 "rgb(200,200,200)", "rgb(200,200,200)"))
   } else if (input == "South") {
-    input_color = list(color = c('rgb(200,200,200)', 'rgb(200,200,200)',
-                                 'rgba(222,45,38,0.8)', 'rgb(200,200,200)'))
+    input_color <- list(color = c("rgb(200,200,200)", "rgb(200,200,200)",
+                                 "rgba(222,45,38,0.8)", "rgb(200,200,200)"))
   } else {
-    input_color = list(color = c('rgb(200,200,200)', 'rgb(200,200,200)',
-                                 'rgb(200,200,200)', 'rgba(222,45,38,0.8)'))
+    input_color <- list(color = c("rgb(200,200,200)", "rgb(200,200,200)",
+                                 "rgb(200,200,200)", "rgba(222,45,38,0.8)"))
   }
-  
+
   graph <- plot_ly(data = region_grouped,
                    x = ~Region,
                    y = ~total_abortion_clinics,
                    marker = input_color,
-                   type = 'bar',
+                   type = "bar",
                    text = paste("Number of Abortion Clinics: ",
                                 region_grouped$total_abortion_clinics)) %>%
     layout(xaxis = list(title = "Region"),
