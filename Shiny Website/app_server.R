@@ -2,6 +2,7 @@ library("shiny")
 source("app_ui.R")
 source("chart_two.R")
 source("chart_three.R")
+source("Conclusion.R")
 
 
 
@@ -19,5 +20,24 @@ server <- shinyServer(function(input, output){
     plot(chart2)
     
   })
+  
+  output$table_clin_con <- renderTable({
+    
+    mutate(percent_and_clinics)
+    
+  })
+  
+  output$table_clin_rates <- renderTable({
+    
+   clin_rate
+    
+  })
+  
+  output$table_1 <- renderTable({
+    
+    table_1
+    
+  })
+  
 })
 

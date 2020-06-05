@@ -77,12 +77,15 @@ summary <- tabPanel(
     sidebarPanel(p("Guys I have no idea what to put in this side bar. :/ ")),
     mainPanel(h4("Takeaway #1"),
               h5("Table"),
+              tableOutput("table_1"),
               h5("Explanation"),
               h4("Takeaway #2"),
               h5("Table"),
+              tableOutput("table_clin_rates"),
               h5("Explanation"),
               h4("Takeaway #3"),
               h5("Table"),
+              tableOutput("table_clin_con"),
               h5("Explanation"))
   )
 )
