@@ -64,10 +64,11 @@ server <- shinyServer(function(input, output){
     plot(chart3)
     
   })
-  output$clin_rates <- renderPlotly({
+  
+  output$clin_rates <- renderPlotly({  #interactive graph 2, renders plot and adds interactive min/max y values 
     
-    chart2 <- scatterplot(abortion_rate_and_clinics, input$Max_y, input$Min_y)
-    plot(chart2)
+    chart2 <- scatterplot(abortion_rate_and_clinics, input$Max_y, input$Min_y) 
+    plot(chart2)   #displays graph 
     
   })
   

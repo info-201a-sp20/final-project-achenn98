@@ -1,5 +1,5 @@
 library("shiny")
-source("chart_one.R")
+
 #intro page
 intro <- 
   mainPanel(
@@ -39,15 +39,15 @@ interactive_one <- sidebarLayout(
 
 
 interactive_two <- 
-  sidebarLayout(
+  sidebarLayout(  #creates a side bar and provides a wdiget to adjust Y axis 
     sidebarPanel(h4("Zoom in or out on the Abortion Rates Axis"),
                  sliderInput(inputId = "Max_y", "Pick a Max y Value", min = 0, max = 300, value = 300),
                  sliderInput(inputId = "Min_y", "Pick a Min y Value", min = 0, max = 300, value = 100)),
     mainPanel(
-      h1("Abortion Clinics x Abortion Rates"),
-       plotlyOutput("clin_rates"),
+      h1("Abortion Clinics x Abortion Rates"), #page title 
+       plotlyOutput("clin_rates"),  #ID
        tags$p(
-         id = "graph_two_paragraph",
+         id = "graph_two_paragraph", #page paragraph definition
          "This point chart attempts to show the relationship between the total number of 
          abortion clinics and the total abortion rate in each region. I used a scatterplot
          to show this correlation, however from the results it demostrates there is a small
@@ -103,14 +103,14 @@ summary <-   mainPanel(
   
 
 
-ui <- fluidPage(
-  includeCSS("style.css"),
-  navbarPage("Womens Reproductive Resources", 
-  tabPanel("Overview", intro),          
-  tabPanel("Abortion Clinics/Region", interactive_one), 
-  tabPanel("Abortion Clinics x Abortion Rates", interactive_two),
-  tabPanel("Abortion Clinics x Contraceptives", interactive_three),
-  tabPanel("Summary Information", summary)
+ui <- fluidPage(     #creates the tabs 
+  includeCSS("style.css"),    #add css styling 
+  navbarPage("Womens Reproductive Resources", #title of website 
+  tabPanel("Overview", intro),          #intro page and tab
+  tabPanel("Abortion Clinics/Region", interactive_one), #interactive page one and tab 
+  tabPanel("Abortion Clinics x Abortion Rates", interactive_two),#interactive page two and tab 
+  tabPanel("Abortion Clinics x Contraceptives", interactive_three),#interactive page three and tab 
+  tabPanel("Summary Information", summary) #summary iformation and table and tab 
   )
 )
 
