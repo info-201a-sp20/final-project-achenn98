@@ -1,10 +1,15 @@
 library("shiny")
-
 source("app_ui.R")
+source("chart_two.R")
 source("chart_three.R")
+<<<<<<< HEAD
 #load necessary libraries
 library("dplyr")
 library("plotly")
+=======
+source("Conclusion.R")
+
+>>>>>>> 097e79c8e7a4fd97e885ffe47df425c239ccd199
 
 #read in csv files
 abortion_data <- read.csv("guttmacher_abortion_data.csv",
@@ -61,7 +66,14 @@ server <- shinyServer(function(input, output){
     plot(chart3)
     
   })
+  output$clin_rates <- renderPlotly({
+    
+    chart2 <- scatterplot(abortion_rate_and_clinics, input$Max_y, input$Min_y)
+    plot(chart2)
+    
+  })
   
+<<<<<<< HEAD
   output$bar_graph <- renderPlotly({
     bar <- bar_function(
       region_grouped,
@@ -70,5 +82,25 @@ server <- shinyServer(function(input, output){
     return(bar)
   })
   
+=======
+  output$table_clin_con <- renderTable({
+    
+    mutate(percent_and_clinics)
+    
+  })
+  
+  output$table_clin_rates <- renderTable({
+    
+   clin_rate
+    
+  })
+  
+  output$table_1 <- renderTable({
+    
+    table_1
+    
+  })
+  
+>>>>>>> 097e79c8e7a4fd97e885ffe47df425c239ccd199
 })
 

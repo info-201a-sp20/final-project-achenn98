@@ -28,11 +28,11 @@ intro <- tabPanel(
 
 #side bar content
 bar_sidebar_content <- sidebarPanel(
- selectInput(
-   inputId = "chart_regions",
-   label = "Pick a geographic region:",
-   choices = region_grouped$Region                  
-   )
+  selectInput(
+    inputId = "chart_regions",
+    label = "Pick a geographic region:",
+    choices = region_grouped$Region                  
+  )
 )
 
 #main panel content
@@ -41,7 +41,15 @@ bar_main_content <- mainPanel(
     "This is helpful to check or verify this resource in the selected region."),
   plotlyOutput(
     outputId = "bar_graph",
+<<<<<<< HEAD
     )
+=======
+    hover = region_grouped$total_abortion_clinics
+  ),
+  verbatimTextOutput(
+    outputId = "info"
+  )
+>>>>>>> 097e79c8e7a4fd97e885ffe47df425c239ccd199
 )
 
 #tabpanel for page with chart one
@@ -57,6 +65,12 @@ interactive_one <- tabPanel(
 #save into ui variable
 ui <- navbarPage(
   title = "Reproduction Rights",
+<<<<<<< HEAD
   intro,
   interactive_one
 )
+=======
+  bar_panel
+)
+
+>>>>>>> 097e79c8e7a4fd97e885ffe47df425c239ccd199

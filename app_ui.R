@@ -1,54 +1,21 @@
 library("shiny")
 
-#intro page
+
 intro <- tabPanel(
-  "Overview",
-  fluidPage(
-    h1("Reproductive Health and Resources"),
-    strong("Purpose and Importance of the Project"),
-    p("As a group, we believe that women should have reproductive rights. We
-    think this would serve as an opportunity to delve into learning which
-    reproductive resources are provided in the United States and the
-    differences between in each geographic region. We also find it interesting
-    how there are many different sub-categories that fall under reproductive
-    health such as teen health, resources, infant health, abortion, etc."),
-    strong("Origin of Sources"),
-    p("The", a("Guttmacher Institute", href = "https://data.guttmacher.org/states/table?dataset=data&state=AL+AK+AZ+AR+CA+CO+CT+DE+DC+FL+GA+HI+ID+IL+IN+IA+KS+KY+LA+ME+MD+MA+MI+MN+MS+MO+MT+NE+NV+NH+NJ+NM+NY+NC+ND+OH+OK+OR+PA+RI+SC+SD+TN+TX+UT+VT+VA+WA+WV+WI+WY&topics=57+283+65"),
-      " dataframe has information on number of abortions, number of abortion
-  clinics, percent of women taking contraceptive, etc. The",
-      a("Kaggle", href = "https://www.kaggle.com/omer2040/usa-states-to-region"),
-      " dataframe labels each of the United States into the four
-    different geographic regions. We then joined these dataframes to create
-    our new dataset that's grouped by regions."),
-    img("We support women's reproductive health!", src = "https://www.plannedparenthood.org/uploads/filer_public_thumbnails/filer_public/cb/c4/cbc45653-b657-4b15-97fd-490aeefcd262/damore_ppla_da_7867.jpg__1200x675_q75_crop_subsampling-2.jpg")
-  )
-)
-
-#side bar content
-bar_sidebar_content <- sidebarPanel(
-  selectInput(
-    inputId = "chart_regions",
-    label = "Pick a geographic region:",
-    choices = region_grouped$Region                  
-  )
-)
-
-#main panel content
-bar_main_content <- mainPanel(
-  p("The bar graph shows the number of abortion clinics in each region.",
-    "This is helpful to check or verify this resource in the selected region."),
-  plotlyOutput(
-    outputId = "bar_graph",
-  )
-)
-
-#tabpanel for page with chart one
-interactive_one <- tabPanel(
-  title = "Abortion Clinics/Region",
-  titlePanel("Number of Abortion Clinics Per Region"),
+  "Page One",
+  fluidPage(),
   sidebarLayout(
-    bar_sidebar_content,
-    bar_main_content
+    sidebarPanel(h1("Heading")),
+    mainPanel()
+  )
+)
+
+interactive_one <- tabPanel(
+  "Page Two",
+  fluidPage(),
+  sidebarLayout(
+    sidebarPanel(h1("Heading")),
+    mainPanel()
   )
 )
 
@@ -79,7 +46,7 @@ interactive_two <- tabPanel(
 )
 
 interactive_three <- tabPanel(
-  "Abortion Clinics x Contraceptives",
+  "Abortion Clinics x Percent Contraceptive",
   fluidPage(h1("Total Abortion Clinics x Percent Contraceptive by Region")),
   sidebarLayout(
     sidebarPanel(h4("Zoom in or out on the Percent of Contraceptives Axis"),
@@ -104,22 +71,11 @@ interactive_three <- tabPanel(
 
 
 summary <- tabPanel(
-  "Summary",
+  "Page Five",
   fluidPage(),
   sidebarLayout(
-    sidebarPanel(p("Guys I have no idea what to put in this side bar. :/ ")),
-    mainPanel(h4("Takeaway #1"),
-              h5("Table"),
-              tableOutput("table_1"),
-              h5("Explanation"),
-              h4("Takeaway #2"),
-              h5("Table"),
-              tableOutput("table_clin_rates"),
-              h5("Explanation"),
-              h4("Takeaway #3"),
-              h5("Table"),
-              tableOutput("table_clin_con"),
-              h5("Explanation"))
+    sidebarPanel(h1("Heading")),
+    mainPanel()
   )
 )
 

@@ -19,12 +19,17 @@ abortion_rate_and_clinics <- joined_df %>%
            total_abortion_rate =
               sum(new_abortion_rate, na.rm = T))
 
-scatterplot <- function(df) {#plots the chart and titles, x and y axis label
+scatterplot <- function(df, max, min) {#plots the chart and titles, x and y axis label
   plot <- ggplot(data = df) +
-  geom_point(mapping = aes(x = total_abortion_clinics, y = total_abortion_rate,
+  geom_point(mapping = aes(x = total_abortion_clinics, 
+                           y = total_abortion_rate,
                            color = Region)) +
   labs(title = "Total Abortion Rates x Total Abortion Clinics by Region",
        x = "Total Abortion Clinics",
-       y = "Total Abortion Rates")
+       y = "Total Abortion Rates") +
+   scale_size(range = c(6, 10), name = "") +
+   coord_cartesian(ylim = c(min, max))
   return(plot)
 }
+scatterplot(abortion_rate_and_clinics, 100, 300)
+
