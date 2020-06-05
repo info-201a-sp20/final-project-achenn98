@@ -1,4 +1,5 @@
 library("dplyr")
+library("knitr")
 
 abortion_data <- read.csv("guttmacher_abortion_data.csv", 
                           stringsAsFactors = F)
@@ -22,10 +23,7 @@ percent_and_clinics <- joined_df %>%
             percent_contraceptive =
               mean(percent_contraceptive, na.rm = T))
 #Making Table
-test <- mutate(percent_and_clinics)
-test
-test2 <- as.data.frame.table(percent_and_clinics)
-test2
+ mutate(percent_and_clinics)
 
 #Code for Table 2
 #binding states dataframe with regions dataframe
@@ -43,10 +41,8 @@ abortion_rate_and_clinics <- joined_df %>%
             total_abortion_rate =
               sum(new_abortion_rate, na.rm = T))
 #Making Table
-test <- mutate(abortion_rate_and_clinics)
-test
-test2 <- as.data.frame.table(abortion_rate_and_clinics)
-test2
+clin_rate <- mutate(abortion_rate_and_clinics)
+
 
 #Code for Table 1
 #binding states dataframe with regions dataframe
@@ -62,7 +58,6 @@ region_grouped <- joined_df %>%
               sum(new_num_abortion_clinics, na.rm = T)) %>%
   filter(Region != "NA")
 #Making Table
-test <- mutate(region_grouped)
-test
-test2 <- as.data.frame.table(region_grouped)
-test2
+ table_1 <- mutate(region_grouped)
+ 
+ 
