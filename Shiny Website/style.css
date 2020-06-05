@@ -1,18 +1,23 @@
-h1 {
 
-  color : navy;
-  
+body{background-color: rgb(233, 214, 217);
+}
+h1 {
+  border: 3px solid white;
+  color : rgb(236, 57, 192);
 }
 
-#graph_three_paragraph{
-  
+p{
   color : gray;
+  font-size: 110%;
+  font-family: "Lucida Console", Courier, monospace;
   
 }
 
 
 h4 {
-  
-  color : purple;
-  
+  color : rgb(180, 83, 245);
+}
+
+h3{
+  color : gray;
 }

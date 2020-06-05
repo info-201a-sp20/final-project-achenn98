@@ -1,9 +1,8 @@
 library("shiny")
 
 #intro page
-intro <- tabPanel(
-  "Overview",
-  fluidPage(
+intro <- 
+  mainPanel(
     h1("Reproductive Health and Resources"),
     strong("Purpose and Importance of the Project"),
     p("As a group, we believe that women should have reproductive rights. We
@@ -22,44 +21,30 @@ intro <- tabPanel(
     our new dataset that's grouped by regions."),
     img("We support women's reproductive health!", src = "https://www.plannedparenthood.org/uploads/filer_public_thumbnails/filer_public/cb/c4/cbc45653-b657-4b15-97fd-490aeefcd262/damore_ppla_da_7867.jpg__1200x675_q75_crop_subsampling-2.jpg")
   )
-)
 
-#side bar content
-bar_sidebar_content <- sidebarPanel(
-  selectInput(
-    inputId = "chart_regions",
-    label = "Pick a geographic region:",
-    choices = region_grouped$Region                  
+interactive_one <- sidebarLayout(
+  sidebarPanel(h4("Choose which region you want to highlight"), 
+   selectInput(inputId = "chart_regions", 
+    label = "Pick a geographic region below:",
+    choices = region_grouped$Region)),
+  mainPanel (
+    h1("Number of Abortion Clinics Per Region"), 
+      plotlyOutput("bar_graph"),
+    tags$p(
+      id = "graph_two_paragraph",
+      "paragraph"
+    )
   )
 )
 
-#main panel content
-bar_main_content <- mainPanel(
-  p("The bar graph shows the number of abortion clinics in each region.",
-    "This is helpful to check or verify this resource in the selected region."),
-  plotlyOutput(
-    outputId = "bar_graph",
-  )
-)
 
-#tabpanel for page with chart one
-interactive_one <- tabPanel(
-  title = "Abortion Clinics/Region",
-  titlePanel("Number of Abortion Clinics Per Region"),
-  sidebarLayout(
-    bar_sidebar_content,
-    bar_main_content
-  )
-)
-
-interactive_two <- tabPanel( 
-  "Abortion Clinics x Abortion Rates",
-  fluidPage(h1("Total Abortion Clinics x Abortion Rates ")),
+interactive_two <- 
   sidebarLayout(
     sidebarPanel(h4("Zoom in or out on the Abortion Rates Axis"),
                  sliderInput(inputId = "Max_y", "Pick a Max y Value", min = 0, max = 300, value = 300),
                  sliderInput(inputId = "Min_y", "Pick a Min y Value", min = 0, max = 300, value = 100)),
     mainPanel(
+      h1("Abortion Clinics x Abortion Rates"),
        plotlyOutput("clin_rates"),
        tags$p(
          id = "graph_two_paragraph",
@@ -76,16 +61,15 @@ interactive_two <- tabPanel(
          and therefore lessens the need for an abortion. "
          ))
   )
-)
 
-interactive_three <- tabPanel(
-  "Abortion Clinics x Contraceptives",
-  fluidPage(h1("Total Abortion Clinics x Percent Contraceptive by Region")),
+
+interactive_three <- 
   sidebarLayout(
     sidebarPanel(h4("Zoom in or out on the Percent of Contraceptives Axis"),
                  sliderInput(inputId = "Max", "Pick a Max y Value", min = 75, max = 115, value = 80),
                  sliderInput(inputId = "Min", "Pick a Min y Value", min = 20, max = 60, value = 60)),
     mainPanel(
+      h1("Abortion Clinics x Contraceptives"),
       plotlyOutput("clin_con"),
       tags$p(
         id = "graph_three_paragraph",
@@ -100,39 +84,33 @@ interactive_three <- tabPanel(
       be on contraceptives."
       ))
   )
-)
 
 
-summary <- tabPanel(
-  "Summary",
-  fluidPage(),
-  sidebarLayout(
-    sidebarPanel(p("Guys I have no idea what to put in this side bar. :/ ")),
-    mainPanel(h4("Takeaway #1"),
+summary <-   mainPanel(
+              h1("Summary Information and Data"),
+              h3("Takeaway #1"),
               h5("Table"),
               tableOutput("table_1"),
               h5("Explanation"),
-              h4("Takeaway #2"),
+              h3("Takeaway #2"),
               h5("Table"),
               tableOutput("table_clin_rates"),
               h5("Explanation"),
-              h4("Takeaway #3"),
+              h3("Takeaway #3"),
               h5("Table"),
               tableOutput("table_clin_con"),
               h5("Explanation"))
+  
+
+
+ui <- fluidPage(
+  includeCSS("style.css"),
+  navbarPage("Womens Reproductive Resources", 
+  tabPanel("Overview", intro),          
+  tabPanel("Abortion Clinics/Region", interactive_one), 
+  tabPanel("Abortion Clinics x Abortion Rates", interactive_two),
+  tabPanel("Abortion Clinics x Contraceptives", interactive_three),
+  tabPanel("Summary Information", summary)
   )
 )
-
-
-ui <- shinyUI(navbarPage(
-  titlePanel("Womens Reproductive Resources"),
-  #includeCSS("style.css"),
-  intro,
-  interactive_one,
-  interactive_two,
-  interactive_three,
-  summary
-  
-))
-
 
