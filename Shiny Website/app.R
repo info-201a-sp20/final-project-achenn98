@@ -4,6 +4,9 @@ library("dplyr")
 library("ggplot2")
 library("gapminder")
 library("plotly")
+library("tidyverse")
+library("kableExtra")
+library("pixiedust")
 
 #sources file
 source("app_ui.R")

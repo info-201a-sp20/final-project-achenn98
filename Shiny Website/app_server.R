@@ -81,7 +81,7 @@ server <- shinyServer(function(input, output){
   
   output$table_clin_con <- renderTable({
     
-    mutate(percent_and_clinics)
+    clin_con
     
   })
   

@@ -1,5 +1,7 @@
 library("dplyr")
-library("knitr")
+library("tidyverse")
+library("kableExtra")
+library("pixiedust")
 
 abortion_data <- read.csv("guttmacher_abortion_data.csv", 
                           stringsAsFactors = F)
@@ -23,7 +25,12 @@ percent_and_clinics <- joined_df %>%
             percent_contraceptive =
               mean(percent_contraceptive, na.rm = T))
 #Making Table
- mutate(percent_and_clinics)
+clin_con <- mutate(percent_and_clinics)
+clin_con <- dust(clin_con) %>%
+  sprinkle(cols = c("total_abortion_clinics", "percent_contraceptive"), round = 2) %>%
+  sprinkle_colnames(Region = "Regions",
+                    total_abortion_clinics = "Total Number of Abortion Clinics",
+                    percent_contraceptive = "Percentage of Contraceptive Use")
 
 #Code for Table 2
 #binding states dataframe with regions dataframe
@@ -42,7 +49,10 @@ abortion_rate_and_clinics <- joined_df %>%
               sum(new_abortion_rate, na.rm = T))
 #Making Table
 clin_rate <- mutate(abortion_rate_and_clinics)
-
+clin_rate <- dust(clin_rate) %>%
+  sprinkle_colnames(Region = "Regions",
+                    total_abortion_clinics = "Total Number of Abortion Clinics",
+                    total_abortion_rate = "Total Abortion Rate")
 
 #Code for Table 1
 #binding states dataframe with regions dataframe
@@ -59,5 +69,7 @@ region_grouped <- joined_df %>%
   filter(Region != "NA")
 #Making Table
  table_1 <- mutate(region_grouped)
- 
+ table_1 <- dust(table_1) %>%
+   sprinkle_colnames(Region = "Regions",
+                     total_abortion_clinics = "Total Number of Abortion Clinics")
  
