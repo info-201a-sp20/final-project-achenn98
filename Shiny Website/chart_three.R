@@ -20,7 +20,6 @@ percent_and_clinics <- joined_df %>%
   summarize(total_abortion_clinics = sum(new_num_abortion_clinics, na.rm = T),
             percent_contraceptive =
               mean(percent_contraceptive, na.rm = T))
-
 #Bubble chart that plots the percent contraceptive use x Region. Size of 
 #bubbles are based on the Total Abortion clinics in each region.
 
