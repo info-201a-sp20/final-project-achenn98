@@ -100,9 +100,9 @@ interactive_three <-
 summary <-   mainPanel(
               h1("Summary Information and Data"),
               h3("Takeaway #1"),
-              h5("Table"),
+              h4("Table"),
               tableOutput("table_1"),
-              h5("Explanation"),
+              h4("Explanation"),
               tags$p(
                 id = "Expanation_1",
                 "When looking at the total number of abortion clinics throughout
@@ -119,9 +119,9 @@ summary <-   mainPanel(
                 are opened."
               ),
               h3("Takeaway #2"),
-              h5("Table"),
+              h4("Table"),
               tableOutput("table_clin_rates"),
-              h5("Explanation"),
+              h4("Explanation"),
               tags$p(
                 id = "Explanation_2",
                 "As we took a look at the total number of abortion clinics to
@@ -136,9 +136,9 @@ summary <-   mainPanel(
                 of clinics provided."
               ),
               h3("Takeaway #3"),
-              h5("Table"),
+              h4("Table"),
               tableOutput("table_clin_con"),
-              h5("Explanation"),
+              h4("Explanation"),
               tags$p(
                 id = "Explanation_3",
                 "As we pulled and analyzed the information on the total
