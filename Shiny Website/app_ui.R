@@ -21,7 +21,7 @@ intro <-
     our new dataset that's grouped by regions."),
     img("We support women's reproductive health!", src = "https://www.plannedparenthood.org/uploads/filer_public_thumbnails/filer_public/cb/c4/cbc45653-b657-4b15-97fd-490aeefcd262/damore_ppla_da_7867.jpg__1200x675_q75_crop_subsampling-2.jpg")
   )
-
+#Interactive page one
 interactive_one <- sidebarLayout(
   sidebarPanel(h4("Choose which region you want to highlight"), 
    selectInput(inputId = "chart_regions", 
@@ -44,7 +44,7 @@ interactive_one <- sidebarLayout(
   )
 )
 
-
+#Interactive page two
 interactive_two <- 
   sidebarLayout(  #creates a side bar and provides a wdiget to adjust Y axis 
     sidebarPanel(h4("Zoom in or out on the Abortion Rates Axis"),
@@ -72,7 +72,7 @@ interactive_two <-
          ))
   )
 
-
+#Interactive page three
 interactive_three <- 
   sidebarLayout(
     sidebarPanel(h4("Zoom in or out on the Percent of Contraceptives Axis"),
@@ -95,7 +95,7 @@ interactive_three <-
       ))
   )
 
-
+#Conclusion Page
 summary <-   mainPanel(
               h1("Summary Information and Data"),
               h3("Takeaway #1"),
@@ -112,7 +112,7 @@ summary <-   mainPanel(
               h5("Explanation"))
   
 
-
+#UI
 ui <- fluidPage(     #creates the tabs 
   includeCSS("style.css"),    #add css styling 
   navbarPage("Womens Reproductive Resources", #title of website 
