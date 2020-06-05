@@ -1,8 +1,9 @@
+#load necessary libraries
 library("dplyr")
 library("tidyverse")
 library("kableExtra")
 library("pixiedust")
-
+#Read CSVs
 abortion_data <- read.csv("guttmacher_abortion_data.csv", 
                           stringsAsFactors = F)
 regions <- read.csv("states_regions.csv",
