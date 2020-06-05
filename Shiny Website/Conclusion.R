@@ -1,6 +1,5 @@
 library("dplyr")
 library("knitr")
-library("kableExtra")
 
 abortion_data <- read.csv("guttmacher_abortion_data.csv", 
                           stringsAsFactors = F)
