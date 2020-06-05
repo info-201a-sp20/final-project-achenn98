@@ -20,20 +20,29 @@ percent_and_clinics <- joined_df %>%
   summarize(total_abortion_clinics = sum(new_num_abortion_clinics, na.rm = T),
             percent_contraceptive =
               mean(percent_contraceptive, na.rm = T))
+#Bubble chart that plots the percent contraceptive use x Region. Size of 
+#bubbles are based on the Total Abortion clinics in each region.
 
-chart_3 <- function(df, max, min) { #plots the chart and titles, x and y axis label
-  plot <- ggplot(data = df) +
-    geom_point(mapping = aes(x = Region,
-                             y = percent_contraceptive,
-                             size = total_abortion_clinics, color = Region)) +
-    labs(title = "Total Abortion Clinics x 
-Percent Contraceptive by Region",
-         x = "Region",
-         y = "Percent Contraceptive") +
-    scale_size(range = c(6, 10), name = "") +
-    coord_cartesian(ylim = c(min, max))
- 
-  return(plot)
+clin_con <- function(df, max, min){
+  chart3 <- plot_ly(
+    df,
+    x = ~Region,
+    y = ~percent_contraceptive,
+    type = 'scatter',
+    mode = "markers",
+    text = ~paste("Region: ", Region,
+                '<br>Percent of Contraceptive Use:', percent_contraceptive,
+                "<br>Total Abortion Clinics:", total_abortion_clinics),
+    color = ~Region, size = ~total_abortion_clinics,
+    sizes = c(20, 50),
+    marker = list(sizemode = 'diameter'))
+
+  chart3 <- chart3 %>%
+    layout(yaxis = list(range = c(min, max)))
+  chart3 <- chart3 %>%
+    layout(xaxis = list(title = "Region"),
+         yaxis = list(title = "Percent Contraceptive"),
+         title = "Total Abortion Clinics x Percent Contraceptive by Region")
+  return(chart3)
 }
-chart_3(percent_and_clinics, 80, 60)
-
+clin_con(percent_and_clinics, 80, 60)
