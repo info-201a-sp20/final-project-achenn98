@@ -1,4 +1,4 @@
-#load libraries
+# load libraries
 library("shiny")
 library("dplyr")
 library("ggplot2")
@@ -8,7 +8,7 @@ library("tidyverse")
 library("kableExtra")
 library("pixiedust")
 
-#sources file
+# sources file
 source("app_ui.R")
 source("app_server.R")
 source("chart_three.R")
@@ -17,5 +17,5 @@ source("bar_graph.R")
 
 
 
-#called shiny ui and server
+# called shiny ui and server
 shinyApp(ui = ui, server = server)
