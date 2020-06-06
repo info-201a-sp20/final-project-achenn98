@@ -14,8 +14,8 @@ source("bar_graph.R")
 server <- shinyServer(function(input, output) {
   #Renders Chart 3 on interactive page 3
   output$clin_con <- renderPlotly({
-    chart3 <- clin_con(percent_and_clinics, input$Max, input$Min)
-    return(chart3)
+    chart_3 <- chart3(percent_and_clinics, input$Max, input$Min)
+    return(chart_3)
   })
 
   #Renders chart 2 on interactive page 2

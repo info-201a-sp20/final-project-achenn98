@@ -23,7 +23,7 @@ percent_and_clinics <- joined_df %>%
 #Bubble chart that plots the percent contraceptive use x Region. Size of 
 #bubbles are based on the Total Abortion clinics in each region.
 
-clin_con <- function(df, max, min){
+chart3 <- function(df, max, min){
   chart3 <- plot_ly(
     df,
     x = ~Region,
@@ -31,7 +31,7 @@ clin_con <- function(df, max, min){
     type = 'scatter',
     mode = "markers",
     text = ~paste("Region: ", Region,
-                '<br>Percent of Contraceptive Use:', percent_contraceptive,
+                '<br>Percent of Contraceptive Use:', round(percent_contraceptive, 3),
                 "<br>Total Abortion Clinics:", total_abortion_clinics),
     color = ~Region, size = ~total_abortion_clinics,
     sizes = c(20, 50),
@@ -45,4 +45,4 @@ clin_con <- function(df, max, min){
          title = "Total Abortion Clinics x Percent Contraceptive by Region")
   return(chart3)
 }
-clin_con(percent_and_clinics, 80, 60)
+chart3(percent_and_clinics, 80, 60)
