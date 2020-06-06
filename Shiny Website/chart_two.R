@@ -1,5 +1,7 @@
 library("dplyr")
 library("ggplot2")
+library("plotly")
+library("gapminder")
 abortion_data <- read.csv("guttmacher_abortion_data.csv",
                           stringsAsFactors = F)
 states_regions <- read.csv("states_regions.csv", stringsAsFactors = F)
@@ -20,17 +22,41 @@ abortion_rate_and_clinics <- joined_df %>%
            total_abortion_rate =
               sum(new_abortion_rate, na.rm = T))
 
-scatterplot <- function(df, max, min) {#plots the chart and titles, x and y axis label
-  plot <- ggplot(data = df) +
-  geom_point(mapping = aes(x = total_abortion_clinics, 
-                           y = total_abortion_rate,
-                           color = Region)) +
-  labs(title = "Total Abortion Rates x Total Abortion Clinics by Region",
-       x = "Total Abortion Clinics",
-       y = "Total Abortion Rates") +
-   scale_size(range = c(6, 10), name = "") +
-   coord_cartesian(ylim = c(min, max))
-  return(plot)
+# scatterplot <- function(df, max, min) {#plots the chart and titles, x and y axis label
+#   plot <- ggplot(data = df) +
+#   geom_point(mapping = aes(x = total_abortion_clinics, 
+#                            y = total_abortion_rate,
+#                            color = Region)) +
+#   labs(title = "Total Abortion Rates x Total Abortion Clinics by Region",
+#        x = "Total Abortion Clinics",
+#        y = "Total Abortion Rates") +
+#    scale_size(range = c(6, 10), name = "") +
+#    coord_cartesian(ylim = c(min, max))
+#   return(plot)
+# }
+scatterplot <- function(df, max, min){
+  chart2 <- plot_ly(
+    df, 
+    x = ~total_abortion_clinics, 
+    y = ~total_abortion_rate, 
+    type = 'scatter', 
+    mode = "markers", 
+    text = ~paste("Region:", Region, 
+                  '<br>Total Abortion Clinics:', total_abortion_clinics, 
+                   "<br> Total Abortion Rates:", total_abortion_rate), 
+    color =~Region, size =~total_abortion_rate,
+    sizes = c(20,50),
+    marker = list(sizemode = 'diameter'))
+  
+  chart2 <- chart2 %>%
+    layout(yaxis = list(range = c(min, max)))
+  chart2 <- chart2 %>%
+    layout(xaxis = list(title = "Total Abortion Clinics"),
+           yaxis = list(title = "Total Abortion Rates "),
+           title = "Total Abortion Clinics x Abortion Rates")
+  return(chart2)
+  
 }
+
 scatterplot(abortion_rate_and_clinics, 100, 300)
 
