@@ -63,7 +63,7 @@ interactive_two <-
       ),
       sliderInput(
         inputId = "Min_y", "Pick a Min y Value",
-        min = 0, max = 300, value = 100
+        min = 0, max = 300, value = 80
       )
     ),
     mainPanel(

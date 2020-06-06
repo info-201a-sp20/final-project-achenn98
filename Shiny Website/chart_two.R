@@ -54,4 +54,4 @@ scatterplot <- function(df, max, min) {
   return(chart2)
 }
 
-scatterplot(abortion_rate_and_clinics, 100, 300)
+scatterplot(abortion_rate_and_clinics, 80, 300)
